@@ -8,6 +8,14 @@ const startState = {
     cards: []
 }
 
+// actions
+export const initialCards = () => {
+    return {
+        type: 'INITIALCARDS',
+        cards: data
+    }
+}
+
 //create store
 export const initStore = (initialState = startState) => {
     return createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddlerware)));
