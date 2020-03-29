@@ -4,6 +4,7 @@ import { initStore, initialCards, addItem } from '../store';
 import withRedux from 'next-redux-wrapper';
 import './index.css';
 import Card from './Card';
+import Link from 'next/link';
 
 class Index extends React.Component {
     static async getInitialProps({store}) {
@@ -14,7 +15,9 @@ class Index extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src="/static/logo.png" className="static-logo" alt="logo" />
+                    <Link href="/page2">
+                        <img src="/static/logo.png" className="static-logo" alt="logo" />
+                    </Link>
                 </header>
                 <div className="Grid">
                     {this.props.cards.map((card) => (
